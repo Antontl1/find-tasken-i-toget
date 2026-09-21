@@ -35,8 +35,8 @@ public class DenGlemteTaske {
 
                 }
                 case "VIDERE" -> {
-                    System.out.println("Du må hellere prøve at kigge i den næste vogn...");
-                    System.out.println("Ja, det vil jeg gøre. Så håber jeg virkelig at den er dér.");
+                    IO.println("Du må hellere prøve at kigge i den næste vogn...");
+                    IO.println("Ja, det vil jeg gøre. Så håber jeg virkelig at den er dér.");
                     mille.gåIndINæsteVogn();
                 }
             }
