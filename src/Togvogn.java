@@ -29,6 +29,16 @@ public class Togvogn {
         return fundetTaske;
     }
 
+    public int hvilketNrSædeErTaskenFundetPå(String taskenHunLederEfter){
+        int sædeHvorTaskenLigger = -1;
+        for (int i = 0; i < sæder.size(); i++) {
+            if (sæder.get(i).getTaske() != null && sæder.get(i).getTaske().getFarve().equalsIgnoreCase(taskenHunLederEfter)) {
+                sædeHvorTaskenLigger = i + 1;
+            }
+        }
+        return sædeHvorTaskenLigger;
+    }
+
 
     public int getVognnummer() {
         return vognnummer;

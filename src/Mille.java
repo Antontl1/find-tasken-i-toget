@@ -13,6 +13,8 @@ public class Mille {
         return denVognHunErI.getVognnummer();
     }
 
+    public int påHvilketSædeLåTasken(String søgekriterie){return denVognHunErI.hvilketNrSædeErTaskenFundetPå(søgekriterie);}
+
     public boolean erTaskenDer(String søgekriterie) {
         return denVognHunErI.kigEfterTaske(søgekriterie) != null;
     }

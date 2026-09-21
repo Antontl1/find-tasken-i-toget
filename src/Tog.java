@@ -25,11 +25,11 @@ public class Tog {
         ArrayList<Sæde> sæder7 = lavSæder(20);
 
         Taske fjellræv = new Taske("blå", "Fjellræv");
-        Taske læder = new Taske("rød", "lille lædertaske");
+        Taske lædertaske = new Taske("rød", "lille lædertaske");
         Taske mappe = new Taske("sort", "mappe");
         smidTaske(sæder5, fjellræv);
         smidTaske(sæder3, mappe);
-        smidTaske(sæder7, læder);
+        smidTaske(sæder7, lædertaske);
 
         Togvogn vogn1 = new Togvogn(1, sæder1);
         Togvogn vogn2 = new Togvogn(2, sæder2);

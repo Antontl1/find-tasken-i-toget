@@ -11,7 +11,7 @@ public class DenGlemteTaske {
         String taskenHunLederEfter = "rød";
         IO.println("Mille har glemt sin taske i toget. Toget holder nu ved endestationen og hun er gået ind i første vogn for at lede efter den.");
         IO.println("Du kan hjælpe hende med at lede efter tasken ved at bruge nogle simple kommandoer:");
-        IO.println("Skriv HVOR for at finde ud af hvor Mille er, KIG for at få hende til at se efter tasken,og VIDERE for at få hende til at gå ind i den næste vogn");
+        IO.println("Skriv HVOR for at finde ud af hvor Mille er, KIG for at få hende til at se efter tasken,og VIDERE for at få hende til at gå ind i den næste vogn: ");
 
         while (!taskenErFundet) {
 
@@ -26,6 +26,7 @@ public class DenGlemteTaske {
                     IO.println("Kan du se om tasken er der?");
                     if (mille.erTaskenDer(taskenHunLederEfter)) {
                         IO.println("Ja, jeg fandt den!");
+                        IO.println("Den lå i vogn "+mille.hvorErDu()+ " på sæde "+ mille.påHvilketSædeLåTasken(taskenHunLederEfter));
                         taskenErFundet = true;
                     } else {
                         IO.println("Nej, desværre, den var ikke i den her vogn.");
