@@ -19,20 +19,20 @@ public class Togvogn {
     }
 
 
-    public Taske kigEfterTaske(String taskenHunLederEfter) {
+    public Taske kigEfterTaske(Taske taskenHunLederEfter) {
         Taske fundetTaske = null;
         for (Sæde sæde : sæder) {
-            if (sæde.getTaske() != null && sæde.getTaske().getFarve().equalsIgnoreCase(taskenHunLederEfter)) {
+            if (sæde.getTaske() != null && sæde.getTaske().equals(taskenHunLederEfter)) {
                 fundetTaske = sæde.getTaske();
             }
         }
         return fundetTaske;
     }
 
-    public int hvilketNrSædeErTaskenFundetPå(String taskenHunLederEfter){
+    public int hvilketNrSædeErTaskenFundetPå(Taske taskenHunLederEfter){
         int sædeHvorTaskenLigger = -1;
         for (int i = 0; i < sæder.size(); i++) {
-            if (sæder.get(i).getTaske() != null && sæder.get(i).getTaske().getFarve().equalsIgnoreCase(taskenHunLederEfter)) {
+            if (sæder.get(i).getTaske() != null && sæder.get(i).getTaske().equals(taskenHunLederEfter)) {
                 sædeHvorTaskenLigger = i + 1;
             }
         }

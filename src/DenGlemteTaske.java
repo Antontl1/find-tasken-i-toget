@@ -7,13 +7,13 @@ public class DenGlemteTaske {
         Togvogn denFørsteVogn = tog.getDenFørsteVogn();
 
         Mille mille = new Mille(denFørsteVogn);
-        boolean taskenErFundet = false;
-        String taskenHunLederEfter = "rød";
-        IO.println("Mille har glemt sin taske i toget. Toget holder nu ved endestationen og hun er gået ind i første vogn for at lede efter den.");
+        boolean eftersøgningenErSlut = false;
+        Taske taskenHunLederEfter = new Taske ("rød", "lille lædertaske");
+        IO.println("Mille har glemt sin taske i toget. Det er en "+ taskenHunLederEfter.farve() + " "+ taskenHunLederEfter.beskrivelse() +". Toget holder nu ved endestationen og hun er gået ind i første vogn for at lede efter den.");
         IO.println("Du kan hjælpe hende med at lede efter tasken ved at bruge nogle simple kommandoer:");
         IO.println("Skriv HVOR for at finde ud af hvor Mille er, KIG for at få hende til at se efter tasken,og VIDERE for at få hende til at gå ind i den næste vogn: ");
 
-        while (!taskenErFundet) {
+        while (!eftersøgningenErSlut) {
 
             String kommando = IO.readln();
 
@@ -27,7 +27,7 @@ public class DenGlemteTaske {
                     if (mille.erTaskenDer(taskenHunLederEfter)) {
                         IO.println("Ja, jeg fandt den!");
                         IO.println("Den lå i vogn "+mille.hvorErDu()+ " på sæde "+ mille.påHvilketSædeLåTasken(taskenHunLederEfter));
-                        taskenErFundet = true;
+                        eftersøgningenErSlut = true;
                     } else {
                         IO.println("Nej, desværre, den var ikke i den her vogn.");
                         IO.println("Her er " + mille.kanDuSeNogenTasker());
@@ -37,7 +37,10 @@ public class DenGlemteTaske {
                 case "VIDERE" -> {
                     IO.println("Du må hellere prøve at kigge i den næste vogn...");
                     IO.println("Ja, det vil jeg gøre. Så håber jeg virkelig at den er dér.");
-                    mille.gåIndINæsteVogn();
+                    if(!mille.gåIndINæsteVogn()){
+                        IO.println("Næ, hov. Det var den sidste vogn. Toget er ikke længere. Så har jeg vist mistet den taske...");
+                        eftersøgningenErSlut=true;
+                    }
                 }
             }
         }

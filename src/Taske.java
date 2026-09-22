@@ -1,19 +1,4 @@
-public class Taske {
-    private String farve;
-    private String beskrivelse;
-
-    public Taske(String farve, String beskrivelse) {
-        this.farve = farve;
-        this.beskrivelse = beskrivelse;
-    }
-
-    public String getFarve() {
-        return farve;
-    }
-
-    public String getBeskrivelse(){
-        return beskrivelse;
-    }
+public record Taske (String farve, String beskrivelse){
 
     @Override
     public String toString() {

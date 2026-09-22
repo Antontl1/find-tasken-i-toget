@@ -5,18 +5,20 @@ public class Mille {
         this.denVognHunErI = denFørsteVognHunGårIndI;
     }
 
-    public void gåIndINæsteVogn() {
+    public boolean gåIndINæsteVogn() {
+
         denVognHunErI = denVognHunErI.getVognenBagved();
+        return denVognHunErI != null;
     }
 
     public int hvorErDu() {
         return denVognHunErI.getVognnummer();
     }
 
-    public int påHvilketSædeLåTasken(String søgekriterie){return denVognHunErI.hvilketNrSædeErTaskenFundetPå(søgekriterie);}
+    public int påHvilketSædeLåTasken(Taske taskenHunLederEfter){return denVognHunErI.hvilketNrSædeErTaskenFundetPå(taskenHunLederEfter);}
 
-    public boolean erTaskenDer(String søgekriterie) {
-        return denVognHunErI.kigEfterTaske(søgekriterie) != null;
+    public boolean erTaskenDer(Taske taskenHunLederEfter) {
+        return denVognHunErI.kigEfterTaske(taskenHunLederEfter) != null;
     }
 
     public String kanDuSeNogenTasker() {
